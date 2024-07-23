@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src = "js/bootstrap.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="home.html"><img src="documents/logo.svg" alt="flag logo"></a>
+            <div class="primary-nav">
+                <ul>
+                    <li><a href = "about.html">About Me</a></li>
+                    <li><a href = "gallery.html">Photo Gallery</a></li>
+                    <li><a href = "resume.html">Resume</a></li>
+                    <li><a href = "contact.html">Contact Me</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                    <li><a href = "process.html">Process</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="seperator"></div>
+
+    <div class="page-title">
+        <h2>About Me</h2>
+    </div>
+
+    <div class = "about-me">
+        <div class = "intro">
+            <p>I am a third year student at UofT majoring in CCIT with a double minor in cinema studies and 
+                visual culture with a passion for technology, cinema, and culinary arts.
+                My journey has been a colorful tapestry woven with experiences, shaping me into the person I am today. 
+                On this platform, I aim to share not just what I do but the essence of who I am. Expect a glimpse 
+                into my professional endeavors, personal reflections, and the quirky facets that make me who I am. 
+                Join me as I navigate and discover the stories that have sculpted my identity.</p>
+        </div>
+        <img src="images/profile.jpg" alt="profile image">
+    </div>
+
+    <div id = "contact-button">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get in touch</a>
+    </div>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    var navbar = document.getElementById("navbar");
+    /*keep the navbar on the top of the screen when scrolling up*/
+    if (prevScrollpos > currentScrollPos) {
+        console.log(document.getElementById("navbar").style.top = "0");
+    /*add .background when scrolling up*/
+        console.log(navbar.classList.add('background'));
+    } 
+     /*hide navbar off the screen when scrolling down*/
+    else {
+        console.log(document.getElementById("navbar").style.top = "-50%");
+    }
+    prevScrollpos = currentScrollPos;
+    
+    /* Remove the .background when at the top of screen*/
+    if (currentScrollPos === 0) {
+        navbar.classList.remove('background')
+    }
+    };
+</script>
+
+</body>
+
+<footer>
+    <h5>Nathan Tio</h5>
+    <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+</footer>
+
+</html>

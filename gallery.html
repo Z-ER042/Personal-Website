@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src = "js/bootstrap.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+            <div class="primary-nav">
+                <ul>
+                    <li><a href = "about.html">About Me</a></li>
+                    <li><a href = "gallery.html">Photo Gallery</a></li>
+                    <li><a href = "resume.html">Resume</a></li>
+                    <li><a href = "contact.html">Contact Me</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                    <li><a href = "process.html">Process</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="seperator">
+
+    </div>
+    <div class="page-title">
+        <h2>Photos</h2>
+
+    </div>
+
+    <div class = "gallery container mt-3 g-2">
+        <h2>Hawaii</h2>
+        <div class = "row mb-3">
+            <div class = "col-lg-3">
+                <img src="images/hawaii1.JPG" class = "photos" alt = "image of sunrise in Hawaii" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3">
+                <img src="images/hawaii2.JPG" class = "photos" alt = "sunrise in Hawaii" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3">
+                <img src="images/hawaii3.JPG" class = "photos" alt = "green hills in Hawaii" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3">
+                <img src="images/hawaii4.JPG" class = "photos" alt = "image of the ocean from the shore" onclick="enlargeImage(src)">
+
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class = "col-lg-3 offset-lg-2">
+                <img src="images/hawaii5.png" class = "photos" alt = "forest area under a mountain in Hawaii" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3 offset-lg-2">
+                <img src="images/hawaii6.JPG" class = "photos" alt = "Buddha statue in Hawaii" onclick="enlargeImage(src)">
+
+            </div>
+        </div>
+
+        <h2>Philippines</h2>
+        <div class = "row mb-3">
+
+            <div class = "col-lg-3">
+                <img src="images/beach.jpg" class = "photos" alt = "beach looking towards the sea in the Philippines" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3">
+                <img src="images/hills.jpg" class = "photos" alt = "lush hills in the Philippines" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3">
+                <img src="images/landscape.jpg" class = "photos" alt = "Philippines landscape" onclick="enlargeImage(src)">
+
+            </div>
+            <div class = "col-lg-3">
+                <img src="images/riverside.jpg" class = "photos" alt = "a moving river" onclick="enlargeImage(src)">
+
+            </div>
+            </div>
+            <div class = "row mb-3">
+                <div class = "col-lg-3">
+                    <img src="images/waterfall.JPG" class = "photos" alt = "small waterfall" onclick="enlargeImage(src)">
+    
+                </div>
+
+                <div class = "col-lg-3">
+                    <img src="images/river.jpg" class = "photos" alt = "image taken while on a river" onclick="enlargeImage(src)">
+    
+                </div>
+                <div class = "col-lg-3">
+                    <img src="images/cave.jpg" class = "photos" alt = "cave along the riverside" onclick="enlargeImage(src)">
+    
+                </div>
+                <div class = "col-lg-3">
+                    <img src="images/waterfall2.JPG" class = "photos" alt = "small waterfall with more aggresive falling water" onclick="enlargeImage(src)">
+    
+                </div>
+           
+            </div>
+            <h2>My Dishes</h2>
+
+            <div class = "row mb-3">
+                <div class = "col-lg-3">
+                    <img src="images/japanese.jpg" class = "photos" alt = "a bowl of ramen" onclick="enlargeImage(src)">
+    
+                </div>
+                <div class = "col-lg-3">
+                    <img src="images/food2.jpg" class = "photos" alt = "katsudon plate" onclick="enlargeImage(src)">
+    
+                </div>
+                <div class = "col-lg-3">
+                    <img src="images/food3.jpg" class = "photos" alt = "Hawaiian style Korean fried chicken bowl" onclick="enlargeImage(src)">
+    
+                </div>
+                <div class = "col-lg-3">
+                    <img src="images/food4.jpg" class = "photos" alt = "Korean fried chicken" onclick="enlargeImage(src)">
+    
+                </div>
+            </div>
+    
+
+    </div>
+
+    <!--container where enlarged image will pop up-->
+    <div class = "image-container" id="imagePopup">
+        <span class = "exit" onclick = "closeImage()">x</span>
+        <img src="" alt="" id="popup">
+
+
+    </div>
+
+<script>
+    function enlargeImage(imageSrc) {
+        let popup = document.getElementById("popup");
+        popup.src = imageSrc;
+
+        let imagePopup = document.getElementById("imagePopup");
+        imagePopup.style.display = "block";
+        document.body.style.overflow = "hidden";
+
+        // Attach a click event listener to the imagePopup to close the image popup
+        imagePopup.addEventListener('click', clickOnImageContainer);
+    }
+
+    function closeImage() {
+        let imagePopup = document.getElementById("imagePopup");
+        imagePopup.style.display = "none";
+        document.body.style.overflow = "auto";
+
+        // Remove the click event listener when the image is closed
+        imagePopup.removeEventListener('click', clickOnImageContainer);
+    }
+
+    // Function to close the image popup if clicked on the image container
+    function clickOnImageContainer(event) {
+        closeImage();
+    }
+
+    var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        var navbar = document.getElementById("navbar");
+        /*keep the navbar on the top of the screen when scrolling up*/
+        if (prevScrollpos > currentScrollPos) {
+            console.log(document.getElementById("navbar").style.top = "0");
+        /*add .background when scrolling up*/
+            console.log(navbar.classList.add('background'));
+        } 
+         /*hide navbar off the screen when scrolling down*/
+        else {
+            console.log(document.getElementById("navbar").style.top = "-50%");
+        }
+        prevScrollpos = currentScrollPos;
+        
+        /* Remove the .background when at the top of screen*/
+        if (currentScrollPos === 0) {
+            navbar.classList.remove('background')
+        }
+        };
+</script>
+
+</body>
+
+<footer>
+    <h5>Nathan Tio</h5>
+    <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+</footer>
+
+</html>
+

@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Resume | Nathan Tio</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src = "js/bootstrap.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+            <div class="primary-nav">
+                <ul>
+                    <li><a href = "about.html">About Me</a></li>
+                    <li><a href = "gallery.html">Photo Gallery</a></li>
+                    <li><a href = "resume.html">Resume</a></li>
+                    <li><a href = "contact.html">Contact Me</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                    <li><a href = "process.html">Process</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="seperator"></div>
+    
+    <div class="page-title">
+        <h2>Blog</h2>
+    </div>
+
+    <div class = "container mt-5 mb-5">
+        <div class = "row">
+            <div class = "col-lg-4">
+                <div class="container mt-3">
+                    <h2>Philippines Landscape</h2>
+                  <div class="card">
+                    <div class="card-body card-expand text-center" id="philippinesExpand">
+                        <img src="images/landscape.jpg" alt="Philippines landscape" class="blog-image">
+                        <p class="card-text">Welcome to the Philippines, where the landscape is a tapestry of enchanting beauty 
+                            and natural wonders. Journey with me through the archipelago's breathtaking landscape, where lush hills 
+                            and majestic mountain ranges paint a portrait of serenity. As you traverse the Philippine islands, you'll 
+                            be captivated by the rolling hills draped in a rich, green carpet of tropical foliage. These lush hills, 
+                            almost comparable to emerald waves, seem to stretch endlessly over the horizon, providing a comforting 
+                            backdrop to the vibrant culture.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="toggleExpand('philippinesExpand')">See More</a>
+                </div>
+              </div>
+            </div>
+    
+            <div class = "col-lg-4">
+                <div class="container mt-3">
+                    <h2>Japanese Cuisine</h2>
+                  <div class="card">
+                    <div class="card-body card-expand text-center" id="japaneseExpand">
+                        <img src="images/japanese.jpg" alt="a bowl of ramen" class="blog-image">
+                        <p class="card-text">Welcome to a culinary journey that combines tradition, precision, and a 
+                            touch of artistic flair - welcome to the world of Japanese cooking. Renowned for its 
+                            exquisite balance of flavors, visual appeal, and emphasis on fresh, high-quality 
+                            ingredients, Japanese cuisine is more than just a meal; it's an art form. From the delicate 
+                            artistry of sushi to the comforting warmth of a bowl of ramen, each dish tells a story of 
+                            centuries-old culinary wisdom passed down through generations.
+
+                            In this blog, we'll explore the fascinating intricacies of Japanese cooking, from the meticulous 
+                            preparation techniques to the cultural significance embedded in every bite. Whether you're a 
+                            seasoned home cook or a curious beginner, join us as we unravel the secrets behind the umami-rich 
+                            broths, the precise knife skills, and the harmonious marriage of textures and flavors that define 
+                            Japanese culinary excellence.
+                            
+                            Get ready to embark on a gastronomic adventure that transcends borders, inviting you to savor the 
+                            essence of Japan in your own kitchen. Arigatou gozaimasu - thank you for joining us on this flavorful 
+                            exploration of Japanese cuisine!</p>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="toggleExpand('japaneseExpand')">See More</a>
+                </div>
+              </div>
+            </div>
+    
+            <div class = "col-lg-4">
+                <div class="container mt-3">
+                    <h2>Hawaii Sunset</h2>
+                  <div class="card">
+                    <div class="card-body card-expand text-center" id="sunsetExpand">
+                        <img src="images/hawaii1.JPG" alt="image of sunrise in Hawaii" class="blog-image">
+                        <p class="card-text">As the sun begins its descent over the landscape of Haleakal&#257;, a beautiful transformation 
+                            begins, one that casts a mesmerizing palette of color across the Hawaiian sky. The air is charged with 
+                            anticipation as the dormant volcanic crater comes alive in a breathtaking display of colors. Picture a 
+                            canvas of warm oranges, vibrant pinks, and serene purples, all of which gently merge into the tranquil 
+                            blues of the Pacific Ocean. The clouds, like soft brushstrokes, catch fire with the last rays of daylight, 
+                            creating an ethereal dance in the fading light. As the sun falls below the horizon, Haleakal&#257; becomes a 
+                            silhouette against the twilight, a sacred moment frozen in time. This is not merely a sunset; it's a 
+                            sensory symphony, a spiritual experience that transcends the boundaries of nature and culture. The air is 
+                            filled with a gentle breeze, carrying the whispers of ancient Hawaiian legends, while the vibrant colors 
+                            reflect the spirit of aloha - the deep love and connection to the land.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="toggleExpand('sunsetExpand')">See More</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    var navbar = document.getElementById("navbar");
+    /*keep the navbar on the top of the screen when scrolling up*/
+    if (prevScrollpos > currentScrollPos) {
+        console.log(document.getElementById("navbar").style.top = "0");
+    /*add .background when scrolling up*/
+        console.log(navbar.classList.add('background'));
+    } 
+     /*hide navbar off the screen when scrolling down*/
+    else {
+        console.log(document.getElementById("navbar").style.top = "-50%");
+    }
+    prevScrollpos = currentScrollPos;
+    
+    /* Remove the .background when at the top of screen*/
+    if (currentScrollPos === 0) {
+        navbar.classList.remove('background')
+    }
+    };
+    //allows for the see more button to expand the card
+    function toggleExpand(contentId, button) {
+    var expandableContent = document.getElementById(contentId);
+    // makses it so the button will only expand the corresponding card
+    expandableContent.classList.toggle('expanded');
+    }
+</script>
+
+</body>
+
+<footer>
+    <h5>Nathan Tio</h5>
+    <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+</footer>
+
+</html>

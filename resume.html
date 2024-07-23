@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src = "js/bootstrap.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+            <div class="primary-nav">
+                <ul>
+                    <li><a href = "about.html">About Me</a></li>
+                    <li><a href = "gallery.html">Photo Gallery</a></li>
+                    <li><a href = "resume.html">Resume</a></li>
+                    <li><a href = "contact.html">Contact Me</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                    <li><a href = "process.html">Process</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div id = "spotlight">
+        <div id="spotlight-background">
+            <img src="images/hawaii2.JPG" alt="sunrise in Hawaii" class="img-fluid">
+        </div>
+        <div id="resume-title">
+            <h2>Resume</h2>
+        </div>
+        <div id="spotlight-profile">
+            <img src="images/resume_profile.jpg" alt="profile picture" class="img-fluid">
+        </div>
+    </div>
+
+    <nav class="scrollspy-menu navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#education-container">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience-container">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills-container">Skills</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <div id="education-container" class="container-fluid bg-secondary text-white">
+            <h2>Education</h2>
+            <div class = "education">
+                <h3>OSSD (High School)</h3>
+                <h4>September 2016 - June 2020 (4 years)</h4>
+                <p>St. Francis Xavier Secondary School</p>
+                <hr>
+            </div>
+            <div class = "education">
+                <h3>Bachelor of Arts: Communication, Culture, Information & Technology (CCIT)</h3>
+                <h4>September 2020-April 2025 (Expected, 5 years)</h4>
+                <p>University of Toronto</p>
+            </div>
+        </div>
+
+        <div id="experience-container" class="container-fluid text-black">
+            <h2>Experience</h2>
+            <div class = "experience">
+                <h3>Paramount Fine Foods Centre - Team Lead</h3>
+                <h4>January 2019 - May 2022 (3 years, 5 months)</h4>
+                <p>Responsibilities included cooking fast-food items, assisting 100+ customers per day as 
+                    a cashier, delegating tasks to others, verifying money at the end of shifts, and making sure 
+                    everything runs as smoothly as possible.</p>
+                    <hr>
+            </div>
+            <div class = "experience">
+                <h3>The Alley - Barista</h3>
+                <h4>August 2020 - November 2021 (1 year, 3 months)</h4>
+                <p>Responsibilities included cashier duties, cooking toppings such as tapioca and making drinks for 
+                    80+ customers per day.</p>
+                    <hr>
+            </div>
+            <div class = "experience">
+                <h3>RBC - Summer Student</h3>
+                <h4>May 2022 - August 2022 (4 months)</h4>
+                <p>Responsibilities included reviewing documents and sending them to the appropriate departments, 
+                    sending emails to clients/advisors, and communicating with the team to ensure all tasks are 
+                    completed in a timely manner.</p>
+                    <hr>
+            </div>
+            <div class = "experience">
+                <h3>RBC - Summer Student</h3>
+                <h4>May 2023 - August 2023 (4 months)</h4>
+                <p>Responsibilities included timely forwarding emails to the relevant departments, 
+                    reviewing and sending client statements, and engaging in effective communication within the 
+                    team to ensure the prompt completion of all assigned tasks.</p>
+            </div>
+        </div>
+
+        <div id="skills-container" class="container-fluid bg-primary text-white">
+            <h2>Skills</h2>
+            <div class = "skills">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Proven experience with prototyping for front end mobile and web interfaces 
+                        using Adobe Xd and Figma</li>
+                    <li class="list-group-item">Theoretical and applied knowledge of WCAG 2.0 standards as applied to AODA for 
+                        design and production of rich media content for online platforms</li>
+                    <li class="list-group-item">Strong experience with Adobe Creative Cloud products: Photoshop, Adobe XD, Premiere Pro, 
+                        Illustrator, After Effects, and Dreamweaver</li>
+                  </ul>
+            </div>
+
+        </div>
+
+<script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        var navbar = document.getElementById("navbar");
+        /*keep the navbar on the top of the screen when scrolling up*/
+        if (prevScrollpos > currentScrollPos) {
+            console.log(document.getElementById("navbar").style.top = "0");
+        /*add .background when scrolling up*/
+            console.log(navbar.classList.add('background'));
+        } 
+         /*hide navbar off the screen when scrolling down*/
+        else {
+            console.log(document.getElementById("navbar").style.top = "-50%");
+        }
+        prevScrollpos = currentScrollPos;
+        
+        /* Remove the .background when at the top of screen*/
+        if (currentScrollPos === 0) {
+            navbar.classList.remove('background')
+        }
+        };
+</script>
+
+</body>
+
+<footer>
+    <h5>Nathan Tio</h5>
+    <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+</footer>
+
+</html>

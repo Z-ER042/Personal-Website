@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src = "js/bootstrap.js"></script>
+</head>
+
+
+
+<body>
+    <nav id="navbar">
+        <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+            <div class="primary-nav">
+                <ul>
+                    <li><a href = "about.html">About Me</a></li>
+                    <li><a href = "gallery.html">Photo Gallery</a></li>
+                    <li><a href = "resume.html">Resume</a></li>
+                    <li><a href = "contact.html">Contact Me</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                    <li><a href = "process.html">Process</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="seperator">
+        
+    </div>
+    <div class="page-title">
+        <h2>Contact Me</h2>
+>
+    </div>
+
+    <div class = "col-lg-8 col-12" id="contact-form">
+        <form>
+            <label for = "fullName" class = "form-label form-label-sm">Please enter your full name:</label>
+            <input type = "text" id = "fullName" name = "fullName" class = "form-control form-control-sm">
+
+            <label for = "email" class = "form-label form-label-sm">Please enter your email:</label>
+            <input type = "text" id = "email" name = "email" class = "form-control form-control-sm">
+
+            <label for = "message" class = "form-label form-label-sm">Please enter your message:</label>
+            <textarea id = "message" rows = "4" cols = "10" class = "form-control form-control-sm"></textarea>
+
+            <button type="button" class="btn btn-primary" onclick="showAlert()">Submit</button>        
+        </form>
+        <div class="alert alert-success" id="successAlert">
+            <strong>Success!</strong> Your message has been sent!
+        </div>
+    </div>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    var navbar = document.getElementById("navbar");
+    /*keep the navbar on the top of the screen when scrolling up*/
+    if (prevScrollpos > currentScrollPos) {
+        console.log(document.getElementById("navbar").style.top = "0");
+    /*add .background when scrolling up*/
+        console.log(navbar.classList.add('background'));
+    } 
+     /*hide navbar off the screen when scrolling down*/
+    else {
+        console.log(document.getElementById("navbar").style.top = "-50%");
+    }
+    prevScrollpos = currentScrollPos;
+    
+    /* Remove the .background when at the top of screen*/
+    if (currentScrollPos === 0) {
+        navbar.classList.remove('background')
+    }
+    };
+        document.body.addEventListener('classChange', function() {
+      // Check if the body has the class "add-padding"
+      if (document.body.classList.contains('add-padding')) {
+        navbar.classList.add('add-padding');
+      } else {
+        navbar.classList.remove('add-padding');
+      }
+    });
+
+    function showAlert() {
+        document.getElementById('successAlert').style.display = 'block';
+        resetForm();
+    }
+
+    function resetForm() {
+        document.getElementById('fullName').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    }
+</script>
+
+</body>
+
+
+<footer>
+    <h5>Nathan Tio</h5>
+    <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+</footer>
+</html>

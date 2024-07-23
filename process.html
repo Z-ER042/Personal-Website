@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src = "js/bootstrap.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="home.html"><img src="documents/logo.svg" alt="flag logo"></a>
+            <div class="primary-nav">
+                <ul>
+                    <li><a href = "about.html">About Me</a></li>
+                    <li><a href = "gallery.html">Photo Gallery</a></li>
+                    <li><a href = "resume.html">Resume</a></li>
+                    <li><a href = "contact.html">Contact Me</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                    <li><a href = "process.html">Process</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="seperator"></div>
+
+    <div class = "gallery container mt-3 g-2">
+        <h2>Planning</h2>
+        <div class = "row mb-4">
+            <div class = "col-lg-4">
+                <img src="images/prototype_home.png" alt="prototype of home page">
+
+            </div>
+            <div class = "col-lg-4">
+                <img src="images/prototype_about.png" alt="prototype of about me page">
+            </div>
+            <div class = "col-lg-4">
+                <img src="images/prototype_gallery.png" alt="prototype of photo gallery page">
+            </div>
+
+        </div>
+        <div class = "row mb-4">
+            <div class = "col-lg-3">
+                <img src="images/prototype_resume.png" alt="prototype of resume page">
+            </div>
+            <div class = "col-lg-4">
+                <img src="images/prototype_contact.png" alt="prototype of contact page">
+            </div>
+            <div class = "col-lg-4">
+                <img src="images/prototype_blog.png" alt="prototype of blog page">
+            </div>
+        </div>
+    </div>
+
+    <div id="explanation">
+        <h4>Rationale</h4>
+        <h5>To plan this website I used Figma and created the pages that I based the website on. I wanted to create a simplistic
+            and minimalistic website style to avoid unnecessary visual elements that may overwhelm and distract the user. This is 
+            why I opted for a softer and lighter background as opposed to a background image or a brightly colored background. For the footer, I chose
+            to use a dark blue, one of my favorite colors, which also fits well within the aesthetic of the site. Furthermore, I seperated 
+            each section on every page with some padding and headings to clearly show the end and start of each section.
+        </h5>
+        <h5>
+            I decided to repurpose my navbar from a previous assignment and adjust it to fit well within the style of my site since 
+            I liked the functionality and thought it would act as an adequate navbar.
+        </h5>
+        <h4>Logo</h4>
+        <h5>As I have used this logo in my previous portfolio website I decided to use it again here. I feel as though this is a great logo for my personal 
+            site as it fits my minimalistic aesthetic and represents me.
+        </h5>
+        <h4>Accessibility</h4>
+        <h5>By using the WAVE evaluation tool I was able to ensure this site's pages were WCAG 2.0 compliant and text or any interactable element
+            had sufficient contrast and is readable for a wide range of users. I also made sure that each image had an alt tag to further increase the accessibility 
+            of the site.
+        </h5>
+        <h4>Navigation</h4>
+        <h5>Structural: The structural navigation represents the website's hierarchy which allows users to quickly and easily navigate through the site.
+            The structural navigation includes each page - home, about, gallery, contact, blog, resume, process. 
+        </h5>
+        <h5>Associative: This navigation type is used to make connections between different pages that have similar information. For example,
+             both experience and education are linked through the resume page.
+        </h5>
+        <h5>Utility: This navigation refers to the tools available to the user to help them navogate through the site more smoothly. The logo in the navbar and 
+            footer brings users to the home page when clicked, allowing them to have access to the home page wherever they are in the site.
+        </h5>
+    </div>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    var navbar = document.getElementById("navbar");
+    /*keep the navbar on the top of the screen when scrolling up*/
+    if (prevScrollpos > currentScrollPos) {
+        console.log(document.getElementById("navbar").style.top = "0");
+    /*add .background when scrolling up*/
+        console.log(navbar.classList.add('background'));
+    } 
+     /*hide navbar off the screen when scrolling down*/
+    else {
+        console.log(document.getElementById("navbar").style.top = "-50%");
+    }
+    prevScrollpos = currentScrollPos;
+    
+    /* Remove the .background when at the top of screen*/
+    if (currentScrollPos === 0) {
+        navbar.classList.remove('background')
+    }
+    };
+</script>
+
+</body>
+
+<footer>
+    <h5>Nathan Tio</h5>
+    <a href="home.html"><img src="documents/logo.svg" alt="site logo"></a>
+</footer>
+
+</html>
