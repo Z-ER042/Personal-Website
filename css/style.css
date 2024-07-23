@@ -1,0 +1,304 @@
+
+.page-title h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.seperator {
+    padding-top: 18rem;
+}
+
+.background-image img{
+    width: 100vw;
+}
+
+body {
+    background-color: #CCC;
+}
+
+
+
+
+/*navbar*/
+
+nav {
+    width: 65%;
+    font-size: 1.25em;
+    text-decoration: none;
+    background-color: transparent;
+    padding-top: 30px;
+    transform: translateX(25%);
+    /*use transform instead of margin: 0 auto to make sure elements stay centered even when 
+    switching to a different sized screen*/
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    transition: 0.3s;
+    display: block;
+}
+
+.background {
+    background-color: #CCC;
+    width: 100%;
+    transform: translateX(0%);
+    text-align: center;
+}
+
+.primary-nav {
+    border-top: 2.5px solid #000;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.primary-nav li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.primary-nav li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+}
+
+nav img {
+    height: 7rem;
+    display: block;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.myNav {
+    padding-bottom: 200rem;
+}
+
+/*home*/
+
+.carousel-inner, .carousel-inner img {
+    height: 100vh;
+}
+
+/*About*/
+
+.about-me {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+.intro p {
+    font-size: 1.5rem;
+}
+
+.about-me img {
+    width: 40%;
+    padding-left: 4rem;
+    border-radius: 10%;
+}
+
+#contact-button {
+    text-align: center;
+}
+
+.button-overlay {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+/*Gallery*/
+
+
+
+.gallery img {
+    width: 20rem;
+    /*changes cursor to pointer when hovering over image*/
+    cursor:pointer;
+}
+
+.gallery img:hover {
+    /*slightly enlarges image when hovered*/
+    transform: scale(1.05);
+}
+
+.image-container {
+    display: none;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-bottom: 30rem;
+}
+
+.exit {
+    position: absolute;
+    font-size: 2rem;
+    cursor: pointer;
+    top: 15%;
+    left: 80%;
+    color: #FFF;
+}
+
+.exit:hover {
+    color: #FF0000;
+}
+
+#popup {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 15rem;
+    height: 100%;
+}
+
+#imagePopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  #popup {
+    display: block;
+    margin: auto;
+    max-width: 100%; /* Adjust the max-width as needed */
+    max-height: 90vh; /* Adjust the max-height as needed */
+  }
+  
+
+/*resume*/
+
+hr {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    transform: translateX(-50%);
+}
+
+#resume-title h2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+}
+
+#spotlight-profile img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    border-radius: 100%;
+    width: 20%;
+    transform: translateX(-50%);
+}
+
+#spotlight-background img {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+.experience, .education {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.scrollspy-menu {
+    position: absolute;
+    width: 100%;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.scrollspy-menu li {
+    padding-left: 4rem;
+}
+
+.container-fluid h2 {
+    padding: 2rem 2rem;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+/*contact*/
+
+form {
+    padding-left: 50%;
+}
+
+#successAlert {
+    display: none;
+    text-align: center;
+    width: 50%;
+    transform: translateX(100%);
+}
+
+#contact-form {
+    padding-bottom: 10rem;
+}
+
+/*blog*/
+
+.card-expand {
+    max-height: 20rem;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.expanded {
+    max-height: 100rem;
+}
+
+.blog-image {
+    width: 12rem;
+    text-align: center;
+    border-radius: 20%;
+}
+
+/*process*/
+
+.process-photos {
+    width: 70%;
+}
+
+#explanation h4{
+    padding-left: 3rem;
+    font-size: 2rem;
+}
+
+#explanation h5 {
+    padding: 0.5rem 4rem;
+}
+
+/*footer*/
+
+
+footer {
+  background-color: #032F4E;
+  color: #FFF;
+  padding: 2rem 0;
+  text-align: center;
+  height: 10rem;
+}
+
+footer h5{
+	font-size: 1.5rem;
+	color: #FFF;
+}
+
+footer img {
+    width: 3rem;
+}
